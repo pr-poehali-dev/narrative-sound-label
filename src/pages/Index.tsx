@@ -7,10 +7,6 @@ import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
-  const [selectedGenre, setSelectedGenre] = useState<string>('all');
-  const [selectedArtist, setSelectedArtist] = useState<string>('all');
-
-  const genres = ['all', 'Hip-Hop', 'R&B', 'Pop', 'Electronic', 'Indie'];
   
   const artists = [
     {
@@ -40,59 +36,129 @@ const Index = () => {
       genre: 'R&B',
       image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/67967e3d-30f6-403f-8b52-30e4d192e0c2.jpg',
       achievements: 'Лучший дебют 2024'
-    }
-  ];
-
-  const releases = [
-    {
-      id: 1,
-      title: 'Midnight Dreams',
-      artist: 'Александр Волков',
-      genre: 'Hip-Hop',
-      cover: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop',
-      year: 2024
-    },
-    {
-      id: 2,
-      title: 'Звёздная Пыль',
-      artist: 'Мария Светлова',
-      genre: 'Pop',
-      cover: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=300&h=300&fit=crop',
-      year: 2024
-    },
-    {
-      id: 3,
-      title: 'Neon Nights',
-      artist: 'DARKWAVES',
-      genre: 'Electronic',
-      cover: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=300&h=300&fit=crop',
-      year: 2023
-    },
-    {
-      id: 4,
-      title: 'Soul Revival',
-      artist: 'Виктория Крылова',
-      genre: 'R&B',
-      cover: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=300&h=300&fit=crop',
-      year: 2024
     },
     {
       id: 5,
-      title: 'Urban Poetry',
-      artist: 'Александр Волков',
-      genre: 'Hip-Hop',
-      cover: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop',
-      year: 2023
+      name: 'Даниил Соколов',
+      genre: 'Indie',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/4a962a39-5775-4dec-84f9-d3ae07e64b7a.jpg',
+      achievements: 'Лучший альтернативный проект 2023'
     },
     {
       id: 6,
-      title: 'Summer Waves',
-      artist: 'Мария Светлова',
+      name: 'Егор «TRAPKID»',
+      genre: 'Hip-Hop',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/6a85cc4a-6385-4c67-a667-1175d0a1d62a.jpg',
+      achievements: '100M+ стримов, Топ-5 чарты'
+    },
+    {
+      id: 7,
+      name: 'Анна Лазарева',
       genre: 'Pop',
-      cover: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop',
-      year: 2024
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/ad35a8f8-539b-4d13-a88f-f39dd219ec83.jpg',
+      achievements: '3x Платина, Золотой Граммофон'
+    },
+    {
+      id: 8,
+      name: 'Максим Орлов',
+      genre: 'R&B',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/e84810a6-0308-4c04-9191-d2ef8f8447d4.jpg',
+      achievements: 'Soul Music Award 2024'
+    },
+    {
+      id: 9,
+      name: 'NEON PULSE',
+      genre: 'Electronic',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/fd3b8ac1-3542-4172-afb7-9881424b55bc.jpg',
+      achievements: 'Топ-3 Beatport Techno'
+    },
+    {
+      id: 10,
+      name: 'Кристина Белова',
+      genre: 'Hip-Hop',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/d810481f-1c3e-4a3b-adbf-97dfa4a64eb8.jpg',
+      achievements: 'Прорыв года 2024, 40M+ стримов'
+    },
+    {
+      id: 11,
+      name: 'Артём Звездин',
+      genre: 'Pop',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/8a061fa6-b606-450f-918a-0946c826931e.jpg',
+      achievements: '80M+ стримов, Золотая пластинка'
+    },
+    {
+      id: 12,
+      name: 'София Романова',
+      genre: 'R&B',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/1555a89b-d2a9-4e1c-933f-14f8c81a1764.jpg',
+      achievements: 'Jazz Voices Award, 20M+ стримов'
+    },
+    {
+      id: 13,
+      name: 'DJ SOLAR',
+      genre: 'Electronic',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/69237fb9-2dc1-4bc1-be94-8399b3f87846.jpg',
+      achievements: 'Resident Ibiza, 60M+ стримов'
+    },
+    {
+      id: 14,
+      name: 'Иван Громов',
+      genre: 'Indie',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/1358d43c-f14c-42c3-8e53-be33d74fe755.jpg',
+      achievements: 'Rock Awards 2023, 30M+ стримов'
+    },
+    {
+      id: 15,
+      name: 'Елена Морская',
+      genre: 'Pop',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/6a950593-d97f-4523-8cec-9214a352d052.jpg',
+      achievements: '2x Платина, MTV Award'
+    },
+    {
+      id: 16,
+      name: 'Павел Летов',
+      genre: 'Indie',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/de56dcba-98ca-4844-b47c-52abc57a2e13.jpg',
+      achievements: 'Лучший bedroom pop проект'
+    },
+    {
+      id: 17,
+      name: 'Алиса Кедрова',
+      genre: 'R&B',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/cf052556-7e5e-4f45-ad61-68f0aa705bee.jpg',
+      achievements: 'Neo-Soul Artist 2024'
+    },
+    {
+      id: 18,
+      name: 'BEATMAKER',
+      genre: 'Hip-Hop',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/e96fe7b9-bf08-4fa1-854c-08780b2bad77.jpg',
+      achievements: 'Продюсер года, 120M+ стримов'
+    },
+    {
+      id: 19,
+      name: 'Вероника Лайт',
+      genre: 'Electronic',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/5f6665cb-315b-4768-812e-6f6a56ff3cb9.jpg',
+      achievements: 'Future Pop Award, 55M+ стримов'
+    },
+    {
+      id: 20,
+      name: 'AMBIENT',
+      genre: 'Electronic',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/b71339bd-4e1c-468b-a889-bbdd20488fe1.jpg',
+      achievements: 'Experimental Music Prize'
+    },
+    {
+      id: 21,
+      name: 'Николай «DRILLKID»',
+      genre: 'Hip-Hop',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/49904673-2a02-4897-8e12-a27c3a956584.jpg',
+      achievements: 'Street Music Award, 70M+ стримов'
     }
   ];
+
+
 
   const services = [
     {
@@ -127,11 +193,7 @@ const Index = () => {
     }
   ];
 
-  const filteredReleases = releases.filter(release => {
-    const genreMatch = selectedGenre === 'all' || release.genre === selectedGenre;
-    const artistMatch = selectedArtist === 'all' || release.artist === selectedArtist;
-    return genreMatch && artistMatch;
-  });
+
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -149,7 +211,7 @@ const Index = () => {
             <button onClick={() => scrollToSection('hero')} className="text-foreground/80 hover:text-primary transition-colors">Главная</button>
             <button onClick={() => scrollToSection('services')} className="text-foreground/80 hover:text-primary transition-colors">Услуги</button>
             <button onClick={() => scrollToSection('artists')} className="text-foreground/80 hover:text-primary transition-colors">Артисты</button>
-            <button onClick={() => scrollToSection('releases')} className="text-foreground/80 hover:text-primary transition-colors">Релизы</button>
+
             <button onClick={() => scrollToSection('contact')} className="text-foreground/80 hover:text-primary transition-colors">Контакты</button>
           </div>
           <Button onClick={() => scrollToSection('contact')}>Бесплатное прослушивание</Button>
@@ -178,7 +240,7 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-20">
             <div className="text-center">
-              <div className="text-5xl font-bold text-primary mb-2">50+</div>
+              <div className="text-5xl font-bold text-primary mb-2">20+</div>
               <div className="text-muted-foreground">Известных артистов</div>
             </div>
             <div className="text-center">
@@ -221,7 +283,7 @@ const Index = () => {
           <p className="text-center text-muted-foreground mb-12 text-lg">
             Талантливые музыканты, создающие хиты
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {artists.map((artist) => (
               <Card key={artist.id} className="bg-card border-border overflow-hidden group hover:border-primary transition-all duration-300">
                 <div className="aspect-square overflow-hidden">
@@ -242,74 +304,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="releases" className="py-20 px-4 bg-secondary">
-        <div className="container mx-auto">
-          <h3 className="text-4xl md:text-5xl font-bold text-center mb-4">Каталог релизов</h3>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
-            Послушайте наши последние работы
-          </p>
-          
-          <div className="flex flex-wrap gap-4 justify-center mb-8">
-            <div className="flex items-center gap-2">
-              <Icon name="Filter" size={20} className="text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">Жанр:</span>
-            </div>
-            {genres.map((genre) => (
-              <Button
-                key={genre}
-                variant={selectedGenre === genre ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setSelectedGenre(genre)}
-              >
-                {genre === 'all' ? 'Все' : genre}
-              </Button>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap gap-4 justify-center mb-12">
-            <div className="flex items-center gap-2">
-              <Icon name="User" size={20} className="text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">Артист:</span>
-            </div>
-            {['all', ...new Set(artists.map(a => a.name))].map((artist) => (
-              <Button
-                key={artist}
-                variant={selectedArtist === artist ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setSelectedArtist(artist)}
-              >
-                {artist === 'all' ? 'Все' : artist}
-              </Button>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {filteredReleases.map((release) => (
-              <Card key={release.id} className="bg-card border-border overflow-hidden group hover:border-primary transition-all duration-300">
-                <div className="aspect-square overflow-hidden relative">
-                  <img 
-                    src={release.cover} 
-                    alt={release.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <Button size="icon" variant="secondary" className="rounded-full">
-                      <Icon name="Play" size={24} />
-                    </Button>
-                  </div>
-                </div>
-                <CardContent className="p-4">
-                  <h4 className="font-semibold mb-1 text-sm">{release.title}</h4>
-                  <p className="text-xs text-muted-foreground mb-1">{release.artist}</p>
-                  <Badge variant="outline" className="text-xs">{release.year}</Badge>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-20 px-4">
+      <section id="contact" className="py-20 px-4 bg-secondary">
         <div className="container mx-auto max-w-2xl">
           <h3 className="text-4xl md:text-5xl font-bold text-center mb-4">Бесплатное прослушивание</h3>
           <p className="text-center text-muted-foreground mb-12 text-lg">
