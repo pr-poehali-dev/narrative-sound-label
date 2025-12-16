@@ -17,28 +17,28 @@ const Index = () => {
       id: 1,
       name: 'Александр Волков',
       genre: 'Hip-Hop',
-      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/b51fe4be-fd77-4ae9-8df9-b1dc18bf9c6f.jpg',
       achievements: 'Золотой альбом 2023, 50M+ стримов'
     },
     {
       id: 2,
       name: 'Мария Светлова',
       genre: 'Pop',
-      image: 'https://images.unsplash.com/photo-1496440737103-cd596325d314?w=400&h=400&fit=crop',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/a58224a3-ba6e-4b93-84fc-7a2d4b103329.jpg',
       achievements: 'Платиновый сингл, MTV Europe Award'
     },
     {
       id: 3,
       name: 'DARKWAVES',
       genre: 'Electronic',
-      image: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&h=400&fit=crop',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/18c6ee13-28f2-4aa4-ad13-4ae43c2d84a4.jpg',
       achievements: 'Топ-10 Beatport, 30M+ стримов'
     },
     {
       id: 4,
       name: 'Виктория Крылова',
       genre: 'R&B',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
+      image: 'https://cdn.poehali.dev/projects/82a4c57e-e259-48b5-9166-26a417c258d5/files/67967e3d-30f6-403f-8b52-30e4d192e0c2.jpg',
       achievements: 'Лучший дебют 2024'
     }
   ];
